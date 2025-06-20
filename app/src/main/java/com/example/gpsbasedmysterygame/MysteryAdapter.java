@@ -45,6 +45,10 @@ public class MysteryAdapter extends ArrayAdapter<Mystery> {
                     Toast.makeText(getContext(), "정답! 포인트 +10", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(getContext(), "오답입니다!", Toast.LENGTH_SHORT).show();
+                    // **오답일 때만** 마커 재배치
+                    if (getContext() instanceof MainActivity) {
+                        ((MainActivity) getContext()).refreshMarkersOnFailure();
+                    }
                 }
             });
             builder.setNegativeButton("취소", null);

@@ -1,0 +1,37 @@
+[
+  {"id":1,"title":"역전의 시계","description":"멈춰있는 시계가 하루에 두 번 맞는 시간은 언제일까?","answer":"아무 때나","latitude":37.449800,"longitude":126.655900},
+  {"id":2,"title":"뒤집힌 교실","description":"검정 칠판 위에 분필이 있다. 하지만 아무도 만지지 않았다면 어떻게 올라갔을까?","answer":"처음부터 위에 있었다","latitude":37.449800,"longitude":126.656450},
+  {"id":3,"title":"유령 엘리베이터","description":"1층에서 5층까지 1층씩만 버튼이 있다면, 3층에서 1층으로 한 번에 가려면?","answer":"아무 버튼도 안 누른다","latitude":37.449800,"longitude":126.657000},
+  {"id":4,"title":"이상한 초대장","description":"“오늘 저녁 9시에 내 집에 놀러와” 이 메시지를 받고, 10시에 가면 주인은 있을까?","answer":"이미 집에 있다","latitude":37.449800,"longitude":126.657550},
+  {"id":5,"title":"비밀번호","description":"어떤 방의 비밀번호는 “5, 6, 11, 17, 28, ?” 다음 숫자는?","answer":"45","latitude":37.449800,"longitude":126.658100},
+
+  {"id":6,"title":"거꾸로 보는 세계","description":"어느 곳에서나 ‘나는 위에 있다’고 말하는 것은?","answer":"하늘","latitude":37.450234,"longitude":126.655900},
+  {"id":7,"title":"반으로 나눈 종이","description":"종이를 5번 반으로 접으면 몇 개의 층이 생길까?","answer":"32","latitude":37.450234,"longitude":126.656450},
+  {"id":8,"title":"네 개의 점","description":"정사각형 네 모서리에 점을 찍고, 한 번에 네 점 모두를 직선 두 개로 지나는 방법은?","answer":"두 대각선","latitude":37.450234,"longitude":126.657000},
+  {"id":9,"title":"빛의 정체","description":"항상 있지만, 눈에 안 보이는 빛은?","answer":"암흑","latitude":37.450234,"longitude":126.657550},
+  {"id":10,"title":"문이 두 개","description":"두 개의 문 중 한 문은 거짓, 한 문은 진실을 말한다. 단 한 번 질문으로 진실의 문을 찾는다면?","answer":"한 문에게 '상대 문이 진실이냐'고 묻는다","latitude":37.450234,"longitude":126.658100},
+
+  {"id":11,"title":"비오는 날","description":"비오는 날에는 항상 생기는 것은?","answer":"젖은 땅","latitude":37.450678,"longitude":126.655900},
+  {"id":12,"title":"그림자 퀴즈","description":"해가 없을 때 생기는 것은?","answer":"어둠","latitude":37.450678,"longitude":126.656450},
+  {"id":13,"title":"숫자 미스터리","description":"12345 중 가운데 숫자는?","answer":"3","latitude":37.450678,"longitude":126.657000},
+  {"id":14,"title":"거울 문제","description":"거울 속의 나와 진짜 나의 차이점은?","answer":"좌우가 바뀐다","latitude":37.450678,"longitude":126.657550},
+  {"id":15,"title":"손 없는 시계","description":"숫자만 있는 시계를 정확히 읽는 방법은?","answer":"위치로 읽는다","latitude":37.450678,"longitude":126.658100},
+
+  {"id":16,"title":"사라지는 물건","description":"내가 가만히 있어도 항상 내 옆에 있고, 밤이 되면 사라지는 것은?","answer":"그림자","latitude":37.451122,"longitude":126.655900},
+  {"id":17,"title":"잃어버린 열쇠","description":"항상 문 안에 있으면서도, 문을 여는 데 쓸 수 없는 열쇠는?","answer":"건반","latitude":37.451122,"longitude":126.656450},
+  {"id":18,"title":"보이지 않는 다리","description":"강을 건너지 않고, 배도 타지 않고, 물에 빠지지 않고 건너는 방법은?","answer":"다리가 없는 곳에서","latitude":37.451122,"longitude":126.657000},
+  {"id":19,"title":"시간의 수수께끼","description":"앞으로는 늘어나고, 뒤로는 줄어드는 것은?","answer":"시간","latitude":37.451122,"longitude":126.657550},
+  {"id":20,"title":"날마다 줄어드는 것","description":"사용하면 사용할수록 줄어드는 것은?","answer":"연필","latitude":37.451122,"longitude":126.658100},
+
+  {"id":21,"title":"무게 없는 것","description":"가장 무거운 것과 가장 가벼운 것, 하지만 무게가 없는 것은?","answer":"약속","latitude":37.451566,"longitude":126.655900},
+  {"id":22,"title":"한 밤의 꽃","description":"밤에만 피고, 낮에는 사라지는 꽃은?","answer":"별","latitude":37.451566,"longitude":126.656450},
+  {"id":23,"title":"빛나는 방","description":"등불도, 창문도 없이 빛이 가득한 방은?","answer":"마음","latitude":37.451566,"longitude":126.657000},
+  {"id":24,"title":"닫히는 문","description":"한 번도 연 적 없는 문은?","answer":"눈꺼풀","latitude":37.451566,"longitude":126.657550},
+  {"id":25,"title":"거짓말의 날","description":"모두가 진실을 말하는 날은 언제일까?","answer":"없다","latitude":37.451566,"longitude":126.658100},
+
+  {"id":26,"title":"달리는 그림자","description":"그림자는 왜 따라올까?","answer":"빛이 있기 때문","latitude":37.452000,"longitude":126.655900},
+  {"id":27,"title":"보이지 않는 열쇠","description":"문을 열 수 없는 열쇠는?","answer":"키보드 키","latitude":37.452000,"longitude":126.656450},
+  {"id":28,"title":"멈추지 않는 강","description":"늘 흐르지만 결코 멈추지 않는 것은?","answer":"시간","latitude":37.452000,"longitude":126.657000},
+  {"id":29,"title":"사라지는 숫자","description":"모두가 싫어하지만 꼭 필요한 숫자는?","answer":"0","latitude":37.452000,"longitude":126.657550},
+  {"id":30,"title":"없는 숫자","description":"1부터 100까지 숫자 중, '없는 숫자'는?","answer":"없음","latitude":37.452000,"longitude":126.658100}
+]
