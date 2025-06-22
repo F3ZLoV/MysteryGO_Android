@@ -4,11 +4,15 @@ import android.Manifest;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Location;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,8 +31,8 @@ import java.util.*;
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     private FloatingActionButton fabAddQuiz;
-    private static final long LOCATION_UPDATE_INTERVAL = 30_000;
-    private static final long LOCATION_FASTEST_INTERVAL = 30_000;
+    private static final long LOCATION_UPDATE_INTERVAL = 5_000;
+    private static final long LOCATION_FASTEST_INTERVAL = 5_000;
     private GoogleMap mMap;
     private FusedLocationProviderClient locationClient;
     private LocationRequest locationRequest;
@@ -37,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private List<Marker> mysteryMarkers = new ArrayList<>();
     private boolean markersInitialized = false;
     private List<Mystery> activeMysteries = new ArrayList<>();
+    private MediaPlayer bgmPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +75,16 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 }
             }
         };
+
+        ImageButton btnProfile = findViewById(R.id.btnProfile);
+        btnProfile.setOnClickListener(v -> {
+            Intent intent = new Intent(this, ProfileActivity.class);
+            startActivity(intent);
+        });
+
+        bgmPlayer = MediaPlayer.create(this, R.raw.bgm); // 파일명: bgm.mp3
+        bgmPlayer.setLooping(true);
+        bgmPlayer.start();
 
         SupportMapFragment mapFragment = (SupportMapFragment)
                 getSupportFragmentManager().findFragmentById(R.id.map);
@@ -130,7 +145,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         double lat0 = myLocation.getLatitude(), lng0 = myLocation.getLongitude();
         List<Mystery> nearby = new ArrayList<>();
         for (Mystery m : mysteries) {
-            if (distance(lat0, lng0, m.latitude, m.longitude) <= 200) {
+            if (distance(lat0, lng0, m.latitude, m.longitude) <= 200) { // 200m 주변 마커 불러오기
                 nearby.add(m);
             }
         }
@@ -240,16 +255,39 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
     }
 
+    // textview 점수 갱신
+    @Override
+    protected void onResume() {
+        super.onResume();
+        updateScore();
+        if (bgmPlayer != null && !bgmPlayer.isPlaying()) {
+            bgmPlayer.start();
+        }
+    }
 
+    // 점수 표시 갱신 메서드
+    private void updateScore() {
+        SharedPreferences prefs = getSharedPreferences("GPSMysteryPrefs", MODE_PRIVATE);
+        int score = prefs.getInt("user_score", 0);
+        TextView txtScore = findViewById(R.id.txtScore);
+        txtScore.setText("점수: " + score);
+    }
 
     @Override
     protected void onPause() {
         super.onPause();
         locationClient.removeLocationUpdates(locationCallback);
+        if (bgmPlayer != null && bgmPlayer.isPlaying()) {
+            bgmPlayer.pause();
+        }
     }
 
     @Override
     protected void onDestroy() {
+        if (bgmPlayer != null) {
+            bgmPlayer.release();
+            bgmPlayer = null;
+        }
         super.onDestroy();
         locationClient.removeLocationUpdates(locationCallback);
     }

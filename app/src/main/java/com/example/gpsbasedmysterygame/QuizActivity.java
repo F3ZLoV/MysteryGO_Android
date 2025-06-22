@@ -1,5 +1,6 @@
 package com.example.gpsbasedmysterygame;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
@@ -35,6 +36,13 @@ public class QuizActivity extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
+
+        toolbar.setNavigationOnClickListener(v -> finish());
+
+//        findViewById(R.id.btnProfile).setOnClickListener(v -> {
+//            Intent intent = new Intent(this, ProfileActivity.class);
+//            startActivity(intent);
+//        });
 
         txtQuestion = findViewById(R.id.txtQuestion);
         edtAnswer   = findViewById(R.id.edtAnswer);
