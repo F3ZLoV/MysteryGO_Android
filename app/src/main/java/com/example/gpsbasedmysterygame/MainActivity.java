@@ -8,6 +8,7 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +17,7 @@ import androidx.core.app.ActivityCompat;
 import com.google.android.gms.location.*;
 import com.google.android.gms.maps.*;
 import com.google.android.gms.maps.model.*;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -24,6 +26,7 @@ import java.util.*;
 
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
 
+    private FloatingActionButton fabAddQuiz;
     private static final long LOCATION_UPDATE_INTERVAL = 30_000;
     private static final long LOCATION_FASTEST_INTERVAL = 30_000;
     private GoogleMap mMap;
@@ -40,6 +43,15 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         locationClient = LocationServices.getFusedLocationProviderClient(this);
+
+        fabAddQuiz = findViewById(R.id.fabAddQuiz);
+        fabAddQuiz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, AddQuizActivity.class);
+                startActivity(intent);
+            }
+        });
 
         // ① 10초마다 위치 요청할 LocationRequest
         locationRequest = LocationRequest.create()
